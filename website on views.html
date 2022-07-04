@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VIEWS</title>
+    <style>
+        body{ background-color:rgb(201, 171, 248);font-family:Trebuchet MS, sans-serif;font-size: 25px;font-weight: bold;}
+        h1{text-align: center;font-family:Trebuchet MS, sans-serif;font-size:45px;text-shadow: 2px 2px #dd8cd8;background-color:#eee1f7; }
+        h4{margin-left:70%;font-family:Trebuchet MS, sans-serif;text-shadow: 2px 2px #dd8cd8;font-size: 19px;}
+        #tab{margin-left:15%;font-size: 25px;font-weight: bold;}
+        input{font-size: 20px;font-weight: bold;}
+        #valn,#vala,#valc,#valn1,#valp,#vals,#valf{height:30px;width:140px;}
+        ul{list-style-type:none;float:left;margin-top:25px;}
+        ul li{display: inline-block;}
+        ul li a{text-decoration:none;color:#fff;padding: 5px 20px;border: 1px solid transparent;background-color:#000;transition:0.6s ease;font-size:20px;}
+        ul li a:hover{background-color:#7DEDFF;color:#000;border:2px solid black}
+        ul li a.active{border:2px solid black;background-color:#7DEDFF;color:#000;} 
+        #views{margin-left:15%;}
+        .name,.city,.age,.fav,.name_1,.prof,.salary{width:150px;height:40px;text-align: center;border: 1px solid #000;background-color:azure;}
+        #blah,#valn,#vala,#valf,#vals,#valc,#valn1,#valp{width:150px;height:40px;text-align: center;border: 1px solid #000;background-color:azure;}
+        #insert,#insert_1{margin-left:70%;width:150px;height:40px;text-align: center;border: 1px solid #000;background-color:rgb(236,172,112);}
+        #hori1,#hori2,#join1,#join2,#vert1,#vert2,#g1,#g2,#rnc1,#rnc2,#check{width:150px;height:40px;text-align: center;border: 1px solid #000;background-color:azure;}
+        #check{background-color: rgb(236,172,112);}
+        #hvc,#vvc,#gvc,#jvc,#rcvc{color: #DA0037;}
+    </style>
+</head>
+<body>
+<h1>Views</h1>  
+<h4>By Sejal Deshpande(20302F0023) </h4>
+<hr style="height:2px;border-width:0;color:black;background-color:black">
+<form>
+    <ul>
+        <li><a class="active" href="website on views.html">Activity1</a></li><br><br>
+        <li><a href="flash.html">Activity2</a></li><br><br>
+        <li><a href="view.html">Activity3</a></li><br>
+        </ul>
+ <div id="tab"> <p style="font-size:40px"><u>Create your own Tables</u></p>
+    <p style="font-size:30px">&nbsp;<u>Table 1</u></p>
+    <p>&nbsp;&nbsp;&nbsp;create table Demo(name varchar2(15),city varchar2(15),age number,DOB date)</p>
+<!table1 formation>
+&nbsp;&nbsp;&nbsp;insert into Demo values('
+   <input type="text" id="valn"> ' , ' <input type="text" id="valc"> ' , ' <input type="text" id="vala"> ' , ' <input type="text" id="valf"> ')<input type="button"  value="Insert" id="insert"><br><br>
+    &nbsp;&nbsp;&nbsp;<input type="text" value="Name" id="blah"><input type="text" id="blah" value="City"><input type="text" id="blah" value="Age"><input type="text" id="blah" value="Date Of Birth"><br>
+&nbsp;&nbsp;&nbsp;<input type="text" class="name"><input type="text" class="city"><input type="text" class="age"><input type="text" class="fav">
+    <br>&nbsp;&nbsp;&nbsp;<input type="text" class="name"><input type="text" class="city"><input type="text" class="age"><input type="text" class="fav">
+    <br>&nbsp;&nbsp;&nbsp;<input type="text" class="name"><input type="text" class="city"><input type="text" class="age"><input type="text" class="fav">
+    <br>&nbsp;&nbsp;&nbsp;<input type="text" class="name"><input type="text" class="city"><input type="text" class="age"><input type="text" class="fav"><br><br>
+<!table2 formation>
+<p style="font-size:30px">&nbsp;<u>Table 2</u></p>
+<p>&nbsp;&nbsp;&nbsp;create table Demo_2(name varchar2(15),profession varchar2(15),salary number)</p>
+&nbsp;&nbsp;&nbsp;insert into Demo_2 values('
+    <input type="text" id="valn1"> ' , ' <input type="text" id="valp"> ' , ' <input type="text" id="vals"> ')<input type="button"  value="Insert" id="insert_1"><br><br>
+    &nbsp;&nbsp;&nbsp;<input type="text" value="Name" id="blah"><input type="text" value="Profession" id="blah"><input type="text" value="Salary" id="blah">
+    <br> &nbsp;&nbsp;&nbsp;<input type="text" class="name_1"><input type="text" class="prof"><input type="text" class="salary">
+    <br>&nbsp;&nbsp;&nbsp;<input type="text" class="name_1"><input type="text" class="prof"><input type="text" class="salary">
+    <br>&nbsp;&nbsp;&nbsp;<input type="text" class="name_1"><input type="text" class="prof"><input type="text" class="salary"><br><br>
+</div>
+<p style="margin-left:15%;font-size: 35px;"><u>Activity 1</u></p>
+<div id="views"><p style="font-size:30px">1.Horizontal View</p>
+Create Horizontal View to display rows where age<50:
+<p><input type="text" id="hori1"> horizontal_view as select* <input type="text" id="hori2">
+    <input type="button"  onclick="Hori()" value="Check" id="check"></p>
+<p id="hvc"></p><br>
+<p style="font-size:30px">2.Vertical View</p>
+Create Vertical View to display name and city columns:
+<p><input type="text" id="vert1"> vertical_view as select <input type="text" id="vert2">
+    <input type="button"  onclick="Vert()" value="Check" id="check"></p>
+<p id="vvc"></p><br>
+<p style="font-size:30px">3.Joined View</p>
+Create Group view to display age and salary columns:
+<p><input type="text" id="join1"> joined_view as select <input type="text" id="join2"> d1.name=d2.name 
+    <input type="button"  onclick="Join()" value="Check" id="check"></p>
+<p id="jvc"></p><br>
+<p style="font-size:30px">4.Group View</p>
+Create Joined View to display Name and minimum age:
+<p><input type="text" id="g1"> group_view as select <input type="text" id="g2"> 
+    <input type="button"  onclick="Group()" value="Check" id="check"></p>
+<p id="gvc"></p><br>
+<p style="font-size:30px">5.Row and Column Subset View</p>
+Create Row and Column Subset View to display Name and Age with Salary>1000 :
+<p><input type="text" id="rnc1"> row_column_subset_view as select <input type="text" id="rnc2"> 
+    <input type="button"  onclick="RNC()" value="Check" id="check"></p>
+<p id="rcvc"></p><br></div>
+</form> 
+<script>
+ class stack{
+
+constructor()
+{
+this.name = [];
+this.city = [];
+this.age = [];
+this.fav = [];
+this.name_1 = [];
+this.prof = [];
+this.sal = [];
+}
+
+push1(val1)
+{
+        this.name.push(val1);
+        document.getElementsByClassName("name")[this.name.length-1].value = val1;
+
+}
+push2(val2)
+{
+        this.city.push(val2);
+        document.getElementsByClassName("city")[this.city.length-1].value = val2;
+}
+push3(val3)
+{
+        this.age.push(val3);
+        document.getElementsByClassName("age")[this.age.length-1].value = val3;
+
+}
+push4(val4)
+{
+        this.fav.push(val4);
+        document.getElementsByClassName("fav")[this.fav.length-1].value = val4;
+
+}
+push5(val9)
+{
+        this.name_1.push(val9);
+        document.getElementsByClassName("name_1")[this.name_1.length-1].value = val9;
+
+}
+push6(val10)
+{
+        this.prof.push(val10);
+        document.getElementsByClassName("prof")[this.prof.length-1].value = val10;
+
+}
+push7(val11)
+{
+        this.sal.push(val11);
+        document.getElementsByClassName("salary")[this.sal.length-1].value = val11;
+
+}
+}
+ var Stack1 = new stack();
+ var Stack2 = new stack();
+ var Stack3 = new stack();
+ var Stack4 = new stack();
+ var Stack5 = new stack();
+ var Stack6 = new stack();
+ var Stack7 = new stack();
+ document.querySelector('#insert').addEventListener("click", function (){
+    var val1 = document.getElementById("valn").value;
+    Stack1.push1(val1); 
+    var val2 = document.getElementById("valc").value;
+    Stack2.push2(val2);
+    var val3 = document.getElementById("vala").value;
+    Stack3.push3(val3);
+    var val4 = document.getElementById("valf").value;
+    Stack4.push4(val4);
+})
+document.querySelector('#insert_1').addEventListener("click", function (){
+    var val9 = document.getElementById("valn1").value;
+    Stack5.push5(val9); 
+    var val10 = document.getElementById("valp").value;
+    Stack6.push6(val10);
+    var val11 = document.getElementById("vals").value;
+    Stack7.push7(val11);
+})
+function Hori()
+    {var val5=document.getElementById("hori1").value;
+    var val6=document.getElementById("hori2").value;
+    if(val5=="create view" && val6=="from Demo where age<50")
+    {document.getElementById("hvc").innerHTML="View created";}
+    else{
+        document.getElementById("hvc").innerHTML="Error";
+    }}
+function Vert()
+    {var val7=document.getElementById("vert1").value;
+    var val8=document.getElementById("vert2").value;
+    if(val7=="create view" && val8=="name,city from Demo")
+    {document.getElementById("vvc").innerHTML="View created";}
+    else{
+        document.getElementById("vvc").innerHTML="Error";
+    }}
+ function Join()
+    {var val12=document.getElementById("join1").value;
+    var val13=document.getElementById("join2").value;
+    if(val12=="create view" && (val13=="d1.name,age,salary from Demo d1,Demo_2 d2 where" || val13=="d2.name,age,salary from Demo d1,Demo_2 d2 where"))
+    {document.getElementById("jvc").innerHTML="View created";}
+    else{
+        document.getElementById("jvc").innerHTML="Error";
+    }}
+function Group()
+    {var val12=document.getElementById("g1").value;
+    var val13=document.getElementById("g2").value;
+    if(val12=="create view" && (val13=="name,min(age) from Demo group by age"))
+    {document.getElementById("gvc").innerHTML="View created";}
+    else{
+        document.getElementById("gvc").innerHTML="Error";
+    }}
+function RNC()
+    {var val12=document.getElementById("rnc1").value;
+    var val13=document.getElementById("rnc2").value;
+    if(val12=="create view" && (val13=="name,age from Demo where salary>1000"))
+    {document.getElementById("rcvc").innerHTML="View created";}
+    else{
+        document.getElementById("rcvc").innerHTML="Error";
+    }}
+    </script>
+</body>
+</html>
